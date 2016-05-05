@@ -1,0 +1,39 @@
+﻿<head>
+<style>
+h2
+{
+color:#fff;
+background-color:#000000;
+text-shadow:#fff 0 0 10px;
+}
+</style>
+<h2>Get Book</h2>
+
+<input type="text" placeholder="Search Books" class="form-control" data-ng-model="search">
+
+<div class="">
+    <!-- Example row of columns -->
+    
+<div class="row books-list">
+       
+ <div class="col-md-4" data-ng-repeat="book in books | orderBy:'name':false | filter:search">
+           
+ <h2>{{book.name | uppercase}}</h2>
+            <p>
+                
+<img data-ng-src="{{book.thumb}}" class="thumb-big">
+            </p>
+            
+<p>{{book.review | limitTo:99}}...</p>
+            <p>
+                
+<span class="label label-warning availability">Availability ({{book.availability}})</span>
+      
+   <a data-ng-href="#/book/{{book.id}}" class="btn btn-primary ">Review</a>
+                
+<a data-ng-href="#/getbook/{{book.id}}" class="btn btn-success " role="button" data-ng-disabled="book.availability == 0">About Book »</a>
+            </p>
+     
+   </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<head>
+<meta charset="UTF-8">
+</head>
+<table class="table table-condensed">
+ 
+   <thead>
+       
+ <tr>
+          
+ <th>Book Name</th>
+           
+<th>Quantity</th>
+            
+        </tr>
+   
+ </thead>
+    
+<tbody>
+        
+<tr data-ng-repeat="book in wishlist">
+            
+<td>{{book.name}}</td>
+            
+<td>{{book.qty}}</td>
+            
+       </tr>
+      
+  <tr data-ng-show="wishlist.length <= 0">
+          
+  <td colspan="3" style="text-align:center;">You have not added any books to wishlist yet.</td>
+        </tr>
+    </tbody>
+</table>
+
+<body>
+<div align="center">
+<button  type="Submit" class="btn btn-default""><span class="glyphicon glyphicon-shopping-cart"></span>Buy Now </button>
+           
+</div>
+</body>

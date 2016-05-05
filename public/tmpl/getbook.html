@@ -1,0 +1,54 @@
+<head>
+<style>
+.green
+{
+color:green;
+}
+.red
+{
+color:red;
+}
+</style>
+<a ng-click="back()" class="btn btn-info pull-right" href="javascript:"><span class="glyphicon glyphicon-arrow-left"></span>Back</a>
+
+
+<div ng-show="currBook">
+    <h3>{{currBook.name}}
+    
+</h3>
+  <span data-ng-repeat="i in getCount(currBook.rating) track by $index" class="glyphicon glyphicon-star green"></span>
+    <hr/>
+   
+ <div class="row">
+      
+  <div class="col-md-8">
+           
+ <form role="form" name="getbook" ng-submit="processForm()">
+               
+ <div class="form-group">
+                    <label for="qty">Quantity</label>
+                    
+<input type="text" ng-model="formData.qty" name="qty" id="qty" ng-pattern="onlyNumbers" placeholder="Books Quantity" value="1" ng-model="qty" required>
+                    
+<span ng-hide="getbook.qty.$valid" class=" alert-danger">Please Enter a Valid Number</span>
+                </div>
+                
+  <button ng-disabled="!(getbook.qty.$valid)" type="Submit" class="btn btn-default"><span class="glyphicon glyphicon-heart red"></span>Add book to wishlist</button>
+           
+ </form>
+        </div>
+        
+<div class="col-md-4">
+            
+<h4>Review</h4>
+           
+ <label  class="text-justify">
+                <img data-ng-src="{{currBook.thumb}}" class="bookThumb pull-left">{{currBook.review}}
+            
+</label>
+       
+ </div>
+    </div>
+</div>
+
+
