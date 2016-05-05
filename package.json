@@ -1,0 +1,18 @@
+{
+  "name": "Book-shelf-app",
+  "version": "0.0.1",
+  "description": "online book shelf",
+  "main": "index.js",
+  "scripts": {
+    "test": 
+
+"echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kiran",
+  "license": "MIT",
+  "devDependencies": {
+    "express": 
+
+"^3.5.0"
+  }
+}
